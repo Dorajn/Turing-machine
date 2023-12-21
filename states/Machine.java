@@ -45,19 +45,26 @@ public class Machine {
 
     public void showTape() { System.out.println(tape); }
 
-    public void runTuring(){
+    public boolean runTuring(){
 
         State currentState = startingState;
 
         while(true){
-            char redCharacter = tape.charAt(pointer);
-            currentState = currentState.findWay(redCharacter, this);
+            
+            try{
+                char redCharacter = tape.charAt(pointer);
+                currentState = currentState.findWay(redCharacter, this);
 
-            if(currentState.acceptingState)
-                break;
+                if(currentState.acceptingState)
+                    break;
 
+            }catch (Exception e) {
+                System.out.println("ERROR: unspecified action");
+                return false;
+            }
         }
 
+        return true;
     }
 
 }
