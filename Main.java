@@ -39,7 +39,7 @@ public class Main {
 
         
 
-        turing.setTape("______10110111_1010011101___", 6);
+        turing.setTape("___10110111_1010011101___", 3);
     
         if(turing.runTuring())
             turing.showTape();

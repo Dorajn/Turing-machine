@@ -58,6 +58,9 @@ public class Machine {
                 if(currentState.acceptingState)
                     break;
 
+            }catch(StringIndexOutOfBoundsException e){
+                System.out.println("ERROR: no more space in tape");
+                return false;
             }catch (Exception e) {
                 System.out.println("ERROR: unspecified action");
                 return false;
